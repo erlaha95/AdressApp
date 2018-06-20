@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB87FB3E42B7B5DB90AA5570 /* Pods_AddressApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */; };
 		F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272020DA49C000BEA73A /* AppDelegate.swift */; };
 		F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272220DA49C000BEA73A /* ViewController.swift */; };
 		F4EC272620DA49C000BEA73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272420DA49C000BEA73A /* Main.storyboard */; };
 		F4EC272820DA49C000BEA73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272720DA49C000BEA73A /* Assets.xcassets */; };
 		F4EC272B20DA49C000BEA73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272920DA49C000BEA73A /* LaunchScreen.storyboard */; };
+		F4EC273420DA744700BEA73A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273320DA744700BEA73A /* Client.swift */; };
+		F4EC273620DA746E00BEA73A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273520DA746E00BEA73A /* Endpoint.swift */; };
+		F4EC273820DA74AA00BEA73A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273720DA74AA00BEA73A /* API.swift */; };
+		F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273920DA74C400BEA73A /* Settlement.swift */; };
+		F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273C20DA76A300BEA73A /* Settlements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.debug.xcconfig"; sourceTree = "<group>"; };
+		81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.release.xcconfig"; sourceTree = "<group>"; };
 		F4EC271D20DA49C000BEA73A /* AddressApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EC272020DA49C000BEA73A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EC272220DA49C000BEA73A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,11 @@
 		F4EC272720DA49C000BEA73A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4EC272A20DA49C000BEA73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EC272C20DA49C000BEA73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4EC273320DA744700BEA73A /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		F4EC273520DA746E00BEA73A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F4EC273720DA74AA00BEA73A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F4EC273920DA74C400BEA73A /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
+		F4EC273C20DA76A300BEA73A /* Settlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB87FB3E42B7B5DB90AA5570 /* Pods_AddressApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EBE67DC203574001A625C64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF606EC1AC2CD69190ECD750 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */,
+				839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F4EC271420DA49C000BEA73A = {
 			isa = PBXGroup;
 			children = (
 				F4EC271F20DA49C000BEA73A /* AddressApp */,
 				F4EC271E20DA49C000BEA73A /* Products */,
+				BF606EC1AC2CD69190ECD750 /* Pods */,
+				6EBE67DC203574001A625C64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +88,8 @@
 		F4EC271F20DA49C000BEA73A /* AddressApp */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC273B20DA759900BEA73A /* model */,
+				F4EC273220DA737D00BEA73A /* api */,
 				F4EC272020DA49C000BEA73A /* AppDelegate.swift */,
 				F4EC272220DA49C000BEA73A /* ViewController.swift */,
 				F4EC272420DA49C000BEA73A /* Main.storyboard */,
@@ -64,6 +100,25 @@
 			path = AddressApp;
 			sourceTree = "<group>";
 		};
+		F4EC273220DA737D00BEA73A /* api */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC273320DA744700BEA73A /* Client.swift */,
+				F4EC273520DA746E00BEA73A /* Endpoint.swift */,
+				F4EC273720DA74AA00BEA73A /* API.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		F4EC273B20DA759900BEA73A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC273920DA74C400BEA73A /* Settlement.swift */,
+				F4EC273C20DA76A300BEA73A /* Settlements.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4EC272F20DA49C000BEA73A /* Build configuration list for PBXNativeTarget "AddressApp" */;
 			buildPhases = (
+				17E205A573894F1FECA1B4A2 /* [CP] Check Pods Manifest.lock */,
 				F4EC271920DA49C000BEA73A /* Sources */,
 				F4EC271A20DA49C000BEA73A /* Frameworks */,
 				F4EC271B20DA49C000BEA73A /* Resources */,
+				09A135D28C37A2FB26760D98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,13 +188,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09A135D28C37A2FB26760D98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TLFloatLabelTextField/TLFloatLabelTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLFloatLabelTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17E205A573894F1FECA1B4A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AddressApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F4EC271920DA49C000BEA73A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */,
+				F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */,
 				F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */,
+				F4EC273620DA746E00BEA73A /* Endpoint.swift in Sources */,
+				F4EC273420DA744700BEA73A /* Client.swift in Sources */,
+				F4EC273820DA74AA00BEA73A /* API.swift in Sources */,
+				F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +379,7 @@
 		};
 		F4EC273020DA49C000BEA73A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +395,7 @@
 		};
 		F4EC273120DA49C000BEA73A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

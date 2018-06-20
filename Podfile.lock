@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.2)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - TLFloatLabelTextField (0.1.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - TLFloatLabelTextField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - RxCocoa
+    - RxSwift
+    - TLFloatLabelTextField
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  TLFloatLabelTextField: 3e2bb61eeb4d9d23d0704bbded7bb1ccf1ae8c6b
+
+PODFILE CHECKSUM: a584be5544a913d311b622b66f1b9e765b971f6f
+
+COCOAPODS: 1.5.3
