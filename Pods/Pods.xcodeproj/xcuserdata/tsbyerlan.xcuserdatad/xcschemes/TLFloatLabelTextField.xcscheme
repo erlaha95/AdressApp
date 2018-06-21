@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D03D38CFB94CFCA79DC4ED5E1D121F0"
+               BlueprintIdentifier = "5A73C6FD68B43F885D64D06B25750340"
                BlueprintName = "TLFloatLabelTextField"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "TLFloatLabelTextField.framework">

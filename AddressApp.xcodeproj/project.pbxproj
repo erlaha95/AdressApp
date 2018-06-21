@@ -13,11 +13,11 @@
 		F4EC272620DA49C000BEA73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272420DA49C000BEA73A /* Main.storyboard */; };
 		F4EC272820DA49C000BEA73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272720DA49C000BEA73A /* Assets.xcassets */; };
 		F4EC272B20DA49C000BEA73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272920DA49C000BEA73A /* LaunchScreen.storyboard */; };
-		F4EC273420DA744700BEA73A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273320DA744700BEA73A /* Client.swift */; };
-		F4EC273620DA746E00BEA73A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273520DA746E00BEA73A /* Endpoint.swift */; };
-		F4EC273820DA74AA00BEA73A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273720DA74AA00BEA73A /* API.swift */; };
 		F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273920DA74C400BEA73A /* Settlement.swift */; };
 		F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273C20DA76A300BEA73A /* Settlements.swift */; };
+		F4EC274020DB5CE900BEA73A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273E20DB5CE900BEA73A /* APIClient.swift */; };
+		F4EC274120DB5CE900BEA73A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273F20DB5CE900BEA73A /* APIRouter.swift */; };
+		F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC274220DB5EBB00BEA73A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +31,11 @@
 		F4EC272720DA49C000BEA73A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4EC272A20DA49C000BEA73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EC272C20DA49C000BEA73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4EC273320DA744700BEA73A /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		F4EC273520DA746E00BEA73A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		F4EC273720DA74AA00BEA73A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F4EC273920DA74C400BEA73A /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
 		F4EC273C20DA76A300BEA73A /* Settlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlements.swift; sourceTree = "<group>"; };
+		F4EC273E20DB5CE900BEA73A /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ../../../../../Downloads/KhanTestApp/KhanTestApp/Network/APIClient.swift; sourceTree = "<group>"; };
+		F4EC273F20DB5CE900BEA73A /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../Downloads/KhanTestApp/KhanTestApp/Network/APIRouter.swift; sourceTree = "<group>"; };
+		F4EC274220DB5EBB00BEA73A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,9 @@
 		F4EC271F20DA49C000BEA73A /* AddressApp */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC274220DB5EBB00BEA73A /* Constants.swift */,
 				F4EC273B20DA759900BEA73A /* model */,
-				F4EC273220DA737D00BEA73A /* api */,
+				F4EC273220DA737D00BEA73A /* network */,
 				F4EC272020DA49C000BEA73A /* AppDelegate.swift */,
 				F4EC272220DA49C000BEA73A /* ViewController.swift */,
 				F4EC272420DA49C000BEA73A /* Main.storyboard */,
@@ -100,14 +101,13 @@
 			path = AddressApp;
 			sourceTree = "<group>";
 		};
-		F4EC273220DA737D00BEA73A /* api */ = {
+		F4EC273220DA737D00BEA73A /* network */ = {
 			isa = PBXGroup;
 			children = (
-				F4EC273320DA744700BEA73A /* Client.swift */,
-				F4EC273520DA746E00BEA73A /* Endpoint.swift */,
-				F4EC273720DA74AA00BEA73A /* API.swift */,
+				F4EC273E20DB5CE900BEA73A /* APIClient.swift */,
+				F4EC273F20DB5CE900BEA73A /* APIRouter.swift */,
 			);
-			path = api;
+			path = network;
 			sourceTree = "<group>";
 		};
 		F4EC273B20DA759900BEA73A /* model */ = {
@@ -197,15 +197,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TLFloatLabelTextField/TLFloatLabelTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLFloatLabelTextField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,11 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */,
+				F4EC274120DB5CE900BEA73A /* APIRouter.swift in Sources */,
 				F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */,
 				F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */,
-				F4EC273620DA746E00BEA73A /* Endpoint.swift in Sources */,
-				F4EC273420DA744700BEA73A /* Client.swift in Sources */,
-				F4EC273820DA74AA00BEA73A /* API.swift in Sources */,
+				F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */,
+				F4EC274020DB5CE900BEA73A /* APIClient.swift in Sources */,
 				F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

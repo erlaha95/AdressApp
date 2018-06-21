@@ -45,7 +45,7 @@ extension Settlement: Decodable {
         self.init(parent: parent, nameKaz: nameKaz, areaType: areaType, level: level, nameRus: nameRus, id: id, code: code)
     }
     
-    enum SettlementCodingKeys: CodingKey {
+    enum SettlementCodingKeys: String, CodingKey {
         case parent = "Parent"
         case nameKaz = "NameKaz"
         case areaType = "AreaType"

@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Settlements {
+struct Settlements: Decodable {
     let settlements: [Settlement] = [Settlement]()
 }

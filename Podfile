@@ -8,7 +8,7 @@ target 'AddressApp' do
   # Pods for AddressApp
   pod 'TLFloatLabelTextField'
   pod 'Alamofire', '~> 4.7'
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+#  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+#  pod 'CodableAlamofire'
 
 end
