@@ -12,8 +12,16 @@ import Alamofire
 class ViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
-    
     @IBOutlet weak var districtTextField: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var settlements: [Settlement] = [Settlement]()
+    
+    let cityPickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        return pickerView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,22 +29,27 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissPicker))
         view.addGestureRecognizer(tap)
         addPickerView()
-        
+        settlements = getSettlements()
+        print(settlements.count)
     }
     
     @objc func dismissPicker() {
-        cityTextField.resignFirstResponder()
+        if cityTextField.isFirstResponder {
+            cityTextField.resignFirstResponder()
+        } else if districtTextField.isFirstResponder {
+            districtTextField.resignFirstResponder()
+        }
     }
     
     func addPickerView() {
-        let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
-        cityTextField.inputView = picker
-        
+        cityPickerView.dataSource = self
+        cityPickerView.delegate = self
+        cityTextField.inputView = cityPickerView
     }
     
     func getSettlements(with parentId: Int) -> [Settlement] {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         var settlements = [Settlement]()
         if let url = URL(string: "http://localhost:8080/api/kato/\(parentId)") {
             Alamofire.request(url).responseJSON { response in
@@ -77,7 +90,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

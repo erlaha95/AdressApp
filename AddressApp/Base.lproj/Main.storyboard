@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGU-jJ-8hg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGU-jJ-8hg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,11 +45,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YOZ-Lv-cSh">
+                                <rect key="frame" x="197.5" y="75.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YOZ-Lv-cSh" firstAttribute="centerY" secondItem="8Va-Ok-MOp" secondAttribute="centerY" id="6Ki-gD-2pX"/>
                             <constraint firstItem="jw0-Jn-4JS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="AIe-PX-a4T"/>
                             <constraint firstItem="8Va-Ok-MOp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="CtT-BD-mQ3"/>
+                            <constraint firstItem="YOZ-Lv-cSh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="20" id="F58-bW-gb5"/>
                             <constraint firstItem="jw0-Jn-4JS" firstAttribute="top" secondItem="K3y-G9-ZMF" secondAttribute="bottom" constant="20" id="FM0-Oc-lY2"/>
                             <constraint firstItem="K3y-G9-ZMF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Q98-ZH-Upq"/>
                             <constraint firstItem="8Va-Ok-MOp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gKI-rd-Ick"/>
@@ -62,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4ab-Jy-7fh"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="YOZ-Lv-cSh" id="Vgs-vq-dRW"/>
                         <outlet property="cityTextField" destination="K3y-G9-ZMF" id="Gvz-Gi-S4K"/>
                         <outlet property="districtTextField" destination="jw0-Jn-4JS" id="5c5-Gs-IKK"/>
                     </connections>
