@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DC94F3220DC0AD200E58D11 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3120DC0AD200E58D11 /* APIClient.swift */; };
+		2DC94F3420DC0AE000E58D11 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3320DC0AE000E58D11 /* APIRouter.swift */; };
 		DB87FB3E42B7B5DB90AA5570 /* Pods_AddressApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */; };
 		F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272020DA49C000BEA73A /* AppDelegate.swift */; };
 		F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272220DA49C000BEA73A /* ViewController.swift */; };
@@ -15,12 +17,12 @@
 		F4EC272B20DA49C000BEA73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272920DA49C000BEA73A /* LaunchScreen.storyboard */; };
 		F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273920DA74C400BEA73A /* Settlement.swift */; };
 		F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273C20DA76A300BEA73A /* Settlements.swift */; };
-		F4EC274020DB5CE900BEA73A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273E20DB5CE900BEA73A /* APIClient.swift */; };
-		F4EC274120DB5CE900BEA73A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273F20DB5CE900BEA73A /* APIRouter.swift */; };
 		F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC274220DB5EBB00BEA73A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DC94F3120DC0AD200E58D11 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2DC94F3320DC0AE000E58D11 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -33,8 +35,6 @@
 		F4EC272C20DA49C000BEA73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EC273920DA74C400BEA73A /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
 		F4EC273C20DA76A300BEA73A /* Settlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlements.swift; sourceTree = "<group>"; };
-		F4EC273E20DB5CE900BEA73A /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ../../../../../Downloads/KhanTestApp/KhanTestApp/Network/APIClient.swift; sourceTree = "<group>"; };
-		F4EC273F20DB5CE900BEA73A /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../Downloads/KhanTestApp/KhanTestApp/Network/APIRouter.swift; sourceTree = "<group>"; };
 		F4EC274220DB5EBB00BEA73A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DC94F3020DC0AB600E58D11 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2DC94F3120DC0AD200E58D11 /* APIClient.swift */,
+				2DC94F3320DC0AE000E58D11 /* APIRouter.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
 		6EBE67DC203574001A625C64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +97,9 @@
 		F4EC271F20DA49C000BEA73A /* AddressApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DC94F3020DC0AB600E58D11 /* network */,
 				F4EC274220DB5EBB00BEA73A /* Constants.swift */,
 				F4EC273B20DA759900BEA73A /* model */,
-				F4EC273220DA737D00BEA73A /* network */,
 				F4EC272020DA49C000BEA73A /* AppDelegate.swift */,
 				F4EC272220DA49C000BEA73A /* ViewController.swift */,
 				F4EC272420DA49C000BEA73A /* Main.storyboard */,
@@ -99,15 +108,6 @@
 				F4EC272C20DA49C000BEA73A /* Info.plist */,
 			);
 			path = AddressApp;
-			sourceTree = "<group>";
-		};
-		F4EC273220DA737D00BEA73A /* network */ = {
-			isa = PBXGroup;
-			children = (
-				F4EC273E20DB5CE900BEA73A /* APIClient.swift */,
-				F4EC273F20DB5CE900BEA73A /* APIRouter.swift */,
-			);
-			path = network;
 			sourceTree = "<group>";
 		};
 		F4EC273B20DA759900BEA73A /* model */ = {
@@ -234,13 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC94F3420DC0AE000E58D11 /* APIRouter.swift in Sources */,
 				F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */,
-				F4EC274120DB5CE900BEA73A /* APIRouter.swift in Sources */,
 				F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */,
 				F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */,
 				F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */,
-				F4EC274020DB5CE900BEA73A /* APIClient.swift in Sources */,
 				F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */,
+				2DC94F3220DC0AD200E58D11 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

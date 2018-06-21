@@ -10,7 +10,7 @@ import UIKit
 
 struct K {
     struct ProductionServer {
-        static let baseURL = "http://data.egov.kz/api/v2/kato"
+        static let baseURL = "http://localhost:8080"
 //        static let imageBaseURL = "http://zp.jgroup.kz"
     }
     
