@@ -10,13 +10,25 @@ import UIKit
 
 struct K {
     struct ProductionServer {
-        static let baseURL = "http://localhost:8080"
-//        static let imageBaseURL = "http://zp.jgroup.kz"
+        static let baseURL = "http://192.168.1.121:8080"
+    }
+    
+    struct KazpostApi {
+        static let baseURL = "https://api.post.kz/api/byAddress/"
     }
     
     struct APIParameterKey {
         static let password = "password"
         static let email = "email"
+    }
+    
+    struct YandexKey {
+        static let apiKey = "9ec3205a-7770-46ed-a570-bbd7e1d36464"
+    }
+    
+    struct GoogleKey {
+        static let apiKey = "AIzaSyDtvMxpDyYPay52kDli_fuqpBMDD9La8Kg"
+        static let apiKeyPlaces = "AIzaSyA4B41ZWy-YCONLdV77fXq03fcwVdum3A0"
     }
 }
 

@@ -6,9 +6,12 @@ target 'AddressApp' do
   use_frameworks!
 
   # Pods for AddressApp
-  pod 'TLFloatLabelTextField'
+#  pod 'TLFloatLabelTextField'
   pod 'Alamofire', '~> 4.7'
   pod 'SDLoader'
+  pod 'YandexMapKit', '~> 3.0.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 #  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
 #  pod 'CodableAlamofire'
 

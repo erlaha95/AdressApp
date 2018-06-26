@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		2DC94F3220DC0AD200E58D11 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3120DC0AD200E58D11 /* APIClient.swift */; };
 		2DC94F3420DC0AE000E58D11 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3320DC0AE000E58D11 /* APIRouter.swift */; };
+		2DC94F3620DC9DD700E58D11 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3520DC9DD700E58D11 /* MapViewController.swift */; };
+		2DC94F3A20DD121D00E58D11 /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3920DD121D00E58D11 /* Street.swift */; };
+		2DC94F3C20DD141D00E58D11 /* FullAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3B20DD141D00E58D11 /* FullAddress.swift */; };
+		2DC94F3E20DD153C00E58D11 /* Kazpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3D20DD153C00E58D11 /* Kazpost.swift */; };
+		2DC94F4020E0BEB500E58D11 /* AddressPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */; };
+		2DC94F4320E0ECB700E58D11 /* StreetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */; };
+		2DC94F4520E113CB00E58D11 /* PartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4420E113CB00E58D11 /* PartType.swift */; };
 		DB87FB3E42B7B5DB90AA5570 /* Pods_AddressApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */; };
 		F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272020DA49C000BEA73A /* AppDelegate.swift */; };
 		F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272220DA49C000BEA73A /* ViewController.swift */; };
@@ -16,13 +23,19 @@
 		F4EC272820DA49C000BEA73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272720DA49C000BEA73A /* Assets.xcassets */; };
 		F4EC272B20DA49C000BEA73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC272920DA49C000BEA73A /* LaunchScreen.storyboard */; };
 		F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273920DA74C400BEA73A /* Settlement.swift */; };
-		F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC273C20DA76A300BEA73A /* Settlements.swift */; };
 		F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC274220DB5EBB00BEA73A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DC94F3120DC0AD200E58D11 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2DC94F3320DC0AE000E58D11 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		2DC94F3520DC9DD700E58D11 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2DC94F3920DD121D00E58D11 /* Street.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Street.swift; sourceTree = "<group>"; };
+		2DC94F3B20DD141D00E58D11 /* FullAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAddress.swift; sourceTree = "<group>"; };
+		2DC94F3D20DD153C00E58D11 /* Kazpost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kazpost.swift; sourceTree = "<group>"; };
+		2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPart.swift; sourceTree = "<group>"; };
+		2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetViewController.swift; sourceTree = "<group>"; };
+		2DC94F4420E113CB00E58D11 /* PartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartType.swift; sourceTree = "<group>"; };
 		2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -34,7 +47,6 @@
 		F4EC272A20DA49C000BEA73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EC272C20DA49C000BEA73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EC273920DA74C400BEA73A /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
-		F4EC273C20DA76A300BEA73A /* Settlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlements.swift; sourceTree = "<group>"; };
 		F4EC274220DB5EBB00BEA73A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +69,16 @@
 				2DC94F3320DC0AE000E58D11 /* APIRouter.swift */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		2DC94F4120E0EC8F00E58D11 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2DC94F3520DC9DD700E58D11 /* MapViewController.swift */,
+				F4EC272220DA49C000BEA73A /* ViewController.swift */,
+				2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		6EBE67DC203574001A625C64 /* Frameworks */ = {
@@ -97,11 +119,11 @@
 		F4EC271F20DA49C000BEA73A /* AddressApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DC94F4120E0EC8F00E58D11 /* controller */,
 				2DC94F3020DC0AB600E58D11 /* network */,
 				F4EC274220DB5EBB00BEA73A /* Constants.swift */,
 				F4EC273B20DA759900BEA73A /* model */,
 				F4EC272020DA49C000BEA73A /* AppDelegate.swift */,
-				F4EC272220DA49C000BEA73A /* ViewController.swift */,
 				F4EC272420DA49C000BEA73A /* Main.storyboard */,
 				F4EC272720DA49C000BEA73A /* Assets.xcassets */,
 				F4EC272920DA49C000BEA73A /* LaunchScreen.storyboard */,
@@ -114,7 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				F4EC273920DA74C400BEA73A /* Settlement.swift */,
-				F4EC273C20DA76A300BEA73A /* Settlements.swift */,
+				2DC94F3920DD121D00E58D11 /* Street.swift */,
+				2DC94F3B20DD141D00E58D11 /* FullAddress.swift */,
+				2DC94F3D20DD153C00E58D11 /* Kazpost.swift */,
+				2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */,
+				2DC94F4420E113CB00E58D11 /* PartType.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -131,6 +157,7 @@
 				F4EC271A20DA49C000BEA73A /* Frameworks */,
 				F4EC271B20DA49C000BEA73A /* Resources */,
 				09A135D28C37A2FB26760D98 /* [CP] Embed Pods Frameworks */,
+				9D8BC524C3F46A639208BAED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,7 +251,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8BC524C3F46A639208BAED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -234,13 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC94F3E20DD153C00E58D11 /* Kazpost.swift in Sources */,
+				2DC94F3A20DD121D00E58D11 /* Street.swift in Sources */,
 				2DC94F3420DC0AE000E58D11 /* APIRouter.swift in Sources */,
+				2DC94F4320E0ECB700E58D11 /* StreetViewController.swift in Sources */,
 				F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */,
+				2DC94F3C20DD141D00E58D11 /* FullAddress.swift in Sources */,
 				F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */,
 				F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */,
+				2DC94F4520E113CB00E58D11 /* PartType.swift in Sources */,
 				F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */,
-				F4EC273D20DA76A300BEA73A /* Settlements.swift in Sources */,
 				2DC94F3220DC0AD200E58D11 /* APIClient.swift in Sources */,
+				2DC94F3620DC9DD700E58D11 /* MapViewController.swift in Sources */,
+				2DC94F4020E0BEB500E58D11 /* AddressPart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
