@@ -100,6 +100,15 @@
                                     <constraint firstAttribute="bottom" secondItem="DJp-gK-f6x" secondAttribute="bottom" constant="8" id="ktw-WZ-8dJ"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дом №" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNQ-hz-gf1">
+                                <rect key="frame" x="25" y="390" width="325" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dxm-Gi-05q"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -113,7 +122,9 @@
                             <constraint firstItem="jw0-Jn-4JS" firstAttribute="top" secondItem="K3y-G9-ZMF" secondAttribute="bottom" constant="20" id="FM0-Oc-lY2"/>
                             <constraint firstItem="THO-sm-ueR" firstAttribute="top" secondItem="EIC-2u-w8n" secondAttribute="bottom" constant="20" id="HYS-Xn-6e6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="THO-sm-ueR" secondAttribute="trailing" constant="25" id="J7L-XK-gmt"/>
+                            <constraint firstItem="DNQ-hz-gf1" firstAttribute="top" secondItem="jK9-jp-LDp" secondAttribute="bottom" constant="20" id="MLV-dx-nPX"/>
                             <constraint firstItem="K3y-G9-ZMF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Q98-ZH-Upq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DNQ-hz-gf1" secondAttribute="trailing" constant="25" id="Vhr-sL-gcQ"/>
                             <constraint firstItem="4MZ-8L-zs1" firstAttribute="top" secondItem="jw0-Jn-4JS" secondAttribute="bottom" constant="20" id="ccM-gf-GHy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EIC-2u-w8n" secondAttribute="trailing" constant="25" id="fkp-af-7bo"/>
                             <constraint firstItem="8Va-Ok-MOp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gKI-rd-Ick"/>
@@ -122,6 +133,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K3y-G9-ZMF" secondAttribute="trailing" constant="25" id="ocW-9W-Cc4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jK9-jp-LDp" secondAttribute="trailing" constant="25" id="p4z-nd-Q4R"/>
                             <constraint firstItem="4MZ-8L-zs1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="t3M-6K-h8z"/>
+                            <constraint firstItem="DNQ-hz-gf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="tKS-Ez-1zr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jw0-Jn-4JS" secondAttribute="trailing" constant="25" id="ur9-zt-MxI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Va-Ok-MOp" secondAttribute="trailing" constant="16" id="xMQ-T3-B5y"/>
                             <constraint firstItem="EIC-2u-w8n" firstAttribute="bottom" secondItem="4MZ-8L-zs1" secondAttribute="bottom" id="xgT-eJ-xlE"/>

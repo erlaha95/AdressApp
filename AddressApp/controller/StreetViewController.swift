@@ -10,17 +10,19 @@ import UIKit
 import Alamofire
 import SDLoader
 
-class StreetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class StreetViewController: UIViewController {
+    
     @IBOutlet weak var streetsTableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     
-    var parentAddress: String = ""
     var region: Settlement?
     var district: Settlement?
     var village: Settlement?
+    var delegate: AddressDelegate? = nil
     
     var streets: [Street] = [Street]()
+    var filteredStreets: [Street] = [Street]()
+    
     let sdLoader = SDLoader()
     
     override func viewDidLoad() {
@@ -35,40 +37,23 @@ class StreetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchController.searchBar.placeholder = "Search streets"
         navigationItem.searchController = searchController
         
-        
-        //var regionNameRus: String
         guard let region = self.region else { return }
         guard let district = self.district else { return }
         
-        findKazpostObjectByKatoSettlementName(region.nameRusWithoutPrefix) { (kazpostObject) in
-            print("Step 1")
+        findKazpostObjectByKatoSettlementName(region.nameRusWithoutAffix) { (kazpostObject) in
+            
             guard let kazpostObject = kazpostObject else { return }
             self.findKazpostObjects(by: kazpostObject.id, completionHandler: { (kazpostObjects) in
-                print(kazpostObject)
-                print("Step 2")
                 var foundDistrict: KazpostObject?
-                print("<> district: \(district.nameRusWithoutPrefix)")
-                if district.nameRusWithoutPrefix.trimmingCharacters(in: .whitespacesAndNewlines) == "Бостандыкский" {
-                    print("SUKAAAA")
-                }
                 
-                for obj in kazpostObjects {
-                    print("<> comparing:  \(obj.nameRus) and \(district.nameRusWithoutPrefix)")
-                    if obj.nameRus == district.nameRusWithoutPrefix.trimmingCharacters(in: .whitespaces) {
-                        print(">>> !!! FOUND: \(obj)")
-                        foundDistrict = obj
-                        break
-                    }
-                }
+                foundDistrict = kazpostObjects.filter{ $0.nameRus == district.nameRusWithoutAffix }.first
+                
                 if let foundDistrict = foundDistrict {
                     self.findKazpostObjects(by: foundDistrict.id, completionHandler: { (kazpostObjects) in
-                        print("Step 3")
                         for obj in kazpostObjects {
                             if obj.actual != nil {
                                 let street = Street(addressRus: obj.nameRus, addressKaz: obj.nameKaz, fullAddress: nil)
                                 self.streets.append(street)
-                            } else {
-                                print(">> obj is not actual: \(String(describing: obj.actual))")
                             }
                         }
                         self.streetsTableView.reloadData()
@@ -170,22 +155,56 @@ class StreetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func findStreetPart(from street: Street) -> AddressPart? {
-        
-        guard let fullAddress = street.fullAddress else { return nil }
-        var foundStreets = fullAddress.parts.filter { $0.type.id == "G11" }
-        
-        guard let street = foundStreets.first else { return nil }
-        return street
-    }
-    
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
     func isFiltering() -> Bool {
-        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
-        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
+        //let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredStreets = streets.filter({( street : Street) -> Bool in
+            if !searchBarIsEmpty() {
+                return street.addressRus.lowercased().contains(searchText.lowercased())
+            }
+            return false
+        })
+        streetsTableView.reloadData()
+    }
+    
+}
+
+extension StreetViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StreetCell")!
+        var street: Street
+        if isFiltering() {
+            street = filteredStreets[indexPath.row]
+        } else {
+            street = streets[indexPath.row]
+        }
+        
+        cell.textLabel?.text = street.addressRus
+        cell.detailTextLabel?.text = street.addressKaz
+        
+        return cell
+    }
+}
+
+extension StreetViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var street: Street
+        if isFiltering() {
+            street = filteredStreets[indexPath.row]
+        } else {
+            street = streets[indexPath.row]
+        }
+        guard let delegate = delegate else { return }
+        delegate.didSelect(street: street.addressRus)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -193,28 +212,25 @@ class StreetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredStreets.count
+        }
         return streets.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StreetCell")!
-        
-        cell.textLabel?.text = streets[indexPath.row].addressRus
-        cell.detailTextLabel?.text = streets[indexPath.row].addressKaz
-        
-        return cell
-    }
-    
 }
 
 extension StreetViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        self.streets = self.streets.filter { (street: Street) -> Bool in
-            street.addressRus.contains(searchController.searchBar.text ?? "")
-        }
-        
-        self.streetsTableView.reloadData()
+        filterContentForSearchText(searchController.searchBar.text!)
     }
-    
-    
 }
+
+extension StreetViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+
+

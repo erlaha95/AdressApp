@@ -10,4 +10,6 @@ import Foundation
 
 struct KazpostObjectApiResponse: Decodable {
     var data: [KazpostObject] = [KazpostObject]()
+    var total: Int
+    var from: Int
 }

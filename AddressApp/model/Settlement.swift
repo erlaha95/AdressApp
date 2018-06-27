@@ -9,8 +9,11 @@
 import Foundation
 
 enum AreaType: Int, Decodable {
-    case city = 1
     case region = 0
+    case city = 1
+    case district = 2
+    case cityAkimat = 3
+    case districtType2 = 4
 }
 
 struct Settlement {
@@ -22,9 +25,9 @@ struct Settlement {
     var nameRus: String
     var id: Int
     var code: Int
-    var nameRusWithoutPrefix: String {
+    var nameRusWithoutAffix: String {
         get {
-            let possibleSuffixes = ["г.", "область", " ", "район"]
+            let possibleSuffixes = ["г.", "область", "район", "\""]
             var formatted = nameRus
             for suffix in possibleSuffixes {
                 if formatted.hasPrefix(suffix) || formatted.hasSuffix(suffix) {
@@ -32,6 +35,9 @@ struct Settlement {
                 }
             }
             return formatted
+                .trimmingCharacters(in: .whitespaces)
+                .components(separatedBy: .decimalDigits)
+                .joined()
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SDLoader
 
-class ViewController: UIViewController, MapDataDelegate {
+class ViewController: UIViewController, AddressDelegate {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var districtTextField: UITextField!
@@ -65,17 +65,9 @@ class ViewController: UIViewController, MapDataDelegate {
             }
         } else if segue.identifier == "StreetVCSegue" {
             if let vc = segue.destination as? StreetViewController {
-                
-                guard let region = selectedRegion else { return }
-                guard let district = selectedDistrict else { return }
-                
-                vc.region = region
-                vc.district = district
-                if region.areaType == .city {
-                    vc.parentAddress = "\(region.nameRus)"
-                } else {
-                    vc.parentAddress = "\(region.nameRus) \(district.nameRus)"
-                }
+                vc.region = selectedRegion
+                vc.district = selectedDistrict
+                vc.delegate = self
             }
         }
     }

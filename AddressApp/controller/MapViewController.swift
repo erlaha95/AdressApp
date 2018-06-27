@@ -12,7 +12,7 @@ import UIKit
 //import GooglePlaces
 import MapKit
 
-protocol MapDataDelegate {
+protocol AddressDelegate {
     func didSelect(street: String)
 }
 
@@ -21,7 +21,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var delegate: MapDataDelegate? = nil
+    var delegate: AddressDelegate? = nil
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
