@@ -16,6 +16,10 @@
 		2DC94F4020E0BEB500E58D11 /* AddressPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */; };
 		2DC94F4320E0ECB700E58D11 /* StreetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */; };
 		2DC94F4520E113CB00E58D11 /* PartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4420E113CB00E58D11 /* PartType.swift */; };
+		2DC94F4720E34AE600E58D11 /* SettlementChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4620E34AE600E58D11 /* SettlementChild.swift */; };
+		2DC94F4920E3668B00E58D11 /* KazpostObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4820E3668B00E58D11 /* KazpostObject.swift */; };
+		2DC94F4C20E366DA00E58D11 /* KazpostObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4B20E366DA00E58D11 /* KazpostObjectType.swift */; };
+		2DC94F4E20E367D000E58D11 /* KazpostObjectApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94F4D20E367D000E58D11 /* KazpostObjectApiResponse.swift */; };
 		DB87FB3E42B7B5DB90AA5570 /* Pods_AddressApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */; };
 		F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272020DA49C000BEA73A /* AppDelegate.swift */; };
 		F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC272220DA49C000BEA73A /* ViewController.swift */; };
@@ -36,6 +40,10 @@
 		2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPart.swift; sourceTree = "<group>"; };
 		2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetViewController.swift; sourceTree = "<group>"; };
 		2DC94F4420E113CB00E58D11 /* PartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartType.swift; sourceTree = "<group>"; };
+		2DC94F4620E34AE600E58D11 /* SettlementChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlementChild.swift; sourceTree = "<group>"; };
+		2DC94F4820E3668B00E58D11 /* KazpostObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KazpostObject.swift; sourceTree = "<group>"; };
+		2DC94F4B20E366DA00E58D11 /* KazpostObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KazpostObjectType.swift; sourceTree = "<group>"; };
+		2DC94F4D20E367D000E58D11 /* KazpostObjectApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KazpostObjectApiResponse.swift; sourceTree = "<group>"; };
 		2F7BCAD626C423C51CD92EC9 /* Pods-AddressApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81646008F1D76FCAC089A483 /* Pods_AddressApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		839595F351841ECD160F8F58 /* Pods-AddressApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressApp/Pods-AddressApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +87,16 @@
 				2DC94F4220E0ECB700E58D11 /* StreetViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		2DC94F4A20E366A200E58D11 /* Kazpost Objects API */ = {
+			isa = PBXGroup;
+			children = (
+				2DC94F4820E3668B00E58D11 /* KazpostObject.swift */,
+				2DC94F4B20E366DA00E58D11 /* KazpostObjectType.swift */,
+				2DC94F4D20E367D000E58D11 /* KazpostObjectApiResponse.swift */,
+			);
+			path = "Kazpost Objects API";
 			sourceTree = "<group>";
 		};
 		6EBE67DC203574001A625C64 /* Frameworks */ = {
@@ -135,12 +153,14 @@
 		F4EC273B20DA759900BEA73A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2DC94F4A20E366A200E58D11 /* Kazpost Objects API */,
 				F4EC273920DA74C400BEA73A /* Settlement.swift */,
 				2DC94F3920DD121D00E58D11 /* Street.swift */,
 				2DC94F3B20DD141D00E58D11 /* FullAddress.swift */,
 				2DC94F3D20DD153C00E58D11 /* Kazpost.swift */,
 				2DC94F3F20E0BEB500E58D11 /* AddressPart.swift */,
 				2DC94F4420E113CB00E58D11 /* PartType.swift */,
+				2DC94F4620E34AE600E58D11 /* SettlementChild.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -281,12 +301,16 @@
 				2DC94F3420DC0AE000E58D11 /* APIRouter.swift in Sources */,
 				2DC94F4320E0ECB700E58D11 /* StreetViewController.swift in Sources */,
 				F4EC272320DA49C000BEA73A /* ViewController.swift in Sources */,
+				2DC94F4720E34AE600E58D11 /* SettlementChild.swift in Sources */,
 				2DC94F3C20DD141D00E58D11 /* FullAddress.swift in Sources */,
+				2DC94F4C20E366DA00E58D11 /* KazpostObjectType.swift in Sources */,
 				F4EC273A20DA74C400BEA73A /* Settlement.swift in Sources */,
+				2DC94F4920E3668B00E58D11 /* KazpostObject.swift in Sources */,
 				F4EC272120DA49C000BEA73A /* AppDelegate.swift in Sources */,
 				2DC94F4520E113CB00E58D11 /* PartType.swift in Sources */,
 				F4EC274320DB5EBB00BEA73A /* Constants.swift in Sources */,
 				2DC94F3220DC0AD200E58D11 /* APIClient.swift in Sources */,
+				2DC94F4E20E367D000E58D11 /* KazpostObjectApiResponse.swift in Sources */,
 				2DC94F3620DC9DD700E58D11 /* MapViewController.swift in Sources */,
 				2DC94F4020E0BEB500E58D11 /* AddressPart.swift in Sources */,
 			);

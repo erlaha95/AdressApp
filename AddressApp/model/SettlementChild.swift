@@ -1,41 +1,24 @@
 //
-//  File.swift
+//  SettlementChild.swift
 //  AddressApp
 //
-//  Created by Yerlan Ismailov on 6/20/18.
+//  Created by Yerlan Ismailov on 27.06.2018.
 //  Copyright © 2018 Yerlan Ismailov. All rights reserved.
 //
 
 import Foundation
 
-enum AreaType: Int, Decodable {
-    case city = 1
-    case region = 0
-}
-
-struct Settlement {
+struct SettlementChild {
     
-    var parent: String
+    var parent: Int
     var nameKaz: String
-    var areaType: AreaType
+    var areaType: Int
     var level: Int
     var nameRus: String
     var id: Int
     var code: Int
-    var nameRusWithoutPrefix: String {
-        get {
-            let possibleSuffixes = ["г.", "область", " ", "район"]
-            var formatted = nameRus
-            for suffix in possibleSuffixes {
-                if formatted.hasPrefix(suffix) || formatted.hasSuffix(suffix) {
-                    formatted = formatted.replacingOccurrences(of: suffix, with: "")
-                }
-            }
-            return formatted
-        }
-    }
     
-    init(parent: String, nameKaz: String, areaType: AreaType, level: Int, nameRus: String, id: Int, code: Int) {
+    init(parent: Int, nameKaz: String, areaType: Int, level: Int, nameRus: String, id: Int, code: Int) {
         self.parent = parent
         self.nameKaz = nameKaz
         self.areaType = areaType
@@ -46,21 +29,14 @@ struct Settlement {
     }
 }
 
-extension Settlement: Decodable {
+extension SettlementChild: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SettlementCodingKeys.self)
         
-        var parent: String = ""
-        
-        do {
-            parent = try container.decode(String.self, forKey: .parent)
-        } catch {
-            parent = String(try container.decode(Int.self, forKey: .parent))
-        }
-        
+        let parent: Int = try container.decode(Int.self, forKey: .parent)
         let nameKaz: String = try container.decode(String.self, forKey: .nameKaz)
-        let areaType: AreaType = try container.decode(AreaType.self, forKey: .areaType)
+        let areaType: Int = try container.decode(Int.self, forKey: .areaType)
         let level: Int = try container.decode(Int.self, forKey: .level)
         let nameRus: String = try container.decode(String.self, forKey: .nameRus)
         let id: Int = try container.decode(Int.self, forKey: .id)

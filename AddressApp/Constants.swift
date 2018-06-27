@@ -15,6 +15,7 @@ struct K {
     
     struct KazpostApi {
         static let baseURL = "https://api.post.kz/api/byAddress/"
+        static let objectsBaseURL = "https://api.post.kz/api/objects/"
     }
     
     struct APIParameterKey {

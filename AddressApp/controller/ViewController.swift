@@ -24,6 +24,8 @@ class ViewController: UIViewController, MapDataDelegate {
     
     var regions: [Settlement] = [Settlement]()
     var districts: [Settlement] = [Settlement]()
+    var selectedRegion: Settlement?
+    var selectedDistrict: Settlement?
     
     let cityPickerView: UIPickerView = {
         let pickerView = UIPickerView()
@@ -63,7 +65,17 @@ class ViewController: UIViewController, MapDataDelegate {
             }
         } else if segue.identifier == "StreetVCSegue" {
             if let vc = segue.destination as? StreetViewController {
-                vc.parentAddress = "\(cityTextField.text) \(districtTextField.text)"
+                
+                guard let region = selectedRegion else { return }
+                guard let district = selectedDistrict else { return }
+                
+                vc.region = region
+                vc.district = district
+                if region.areaType == .city {
+                    vc.parentAddress = "\(region.nameRus)"
+                } else {
+                    vc.parentAddress = "\(region.nameRus) \(district.nameRus)"
+                }
             }
         }
     }
@@ -101,7 +113,6 @@ class ViewController: UIViewController, MapDataDelegate {
         guard let url = URL(string: urlStr) else {
             return
         }
-        print(url.absoluteString)
         sdLoader.startAnimating(atView: self.view)
         Alamofire.request(url).responseJSON { response in
             if let error = response.error {
@@ -110,8 +121,7 @@ class ViewController: UIViewController, MapDataDelegate {
                 return
             }
             
-            if let data = response.data, let json = String(data: data, encoding: .utf8) {
-                print("JSON: \(json)")
+            if let data = response.data, let _ = String(data: data, encoding: .utf8) {
                 let decoder = JSONDecoder()
                 do {
                     var kazpost = Kazpost()
@@ -127,8 +137,12 @@ class ViewController: UIViewController, MapDataDelegate {
     }
     
     func getSettlements(with parentId: Int) {
+        print("parentId: \(parentId)")
         var settlements = [Settlement]()
-        if let url = URL(string: "\(K.ProductionServer.baseURL)/api/kato/\(parentId)") {
+        let source = "{\"size\":100,\"query\":{\"filtered\":{\"query\":{\"bool\":{\"must\":[{\"match\":{\"Parent\":\(parentId)}}]}}}}}".addingPercentEncoding(withAllowedCharacters: .urlUserAllowed)
+        
+        if let url = URL(string: "http://data.egov.kz/api/v2/kato?source=" + source!) {
+            print(url.absoluteString)
             sdLoader.startAnimating(atView: self.view)
             Alamofire.request(url).responseJSON { response in
                 if let data = response.data, let _ = String(data: data, encoding: .utf8) {
@@ -139,7 +153,7 @@ class ViewController: UIViewController, MapDataDelegate {
                         self.sdLoader.stopAnimation()
                     } catch let err {
                         self.sdLoader.stopAnimation()
-                        print(err.localizedDescription)
+                        print("find childs err: \(err.localizedDescription)")
                     }
                 }
             }
@@ -197,8 +211,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView == cityPickerView {
             cityTextField.text = regions[row].nameRus
             getSettlements(with: regions[row].id)
+            selectedRegion = regions[row]
         } else if pickerView == districtPickerView {
             districtTextField.text = districts[row].nameRus
+            selectedDistrict = districts[row]
         }
     }
 }
